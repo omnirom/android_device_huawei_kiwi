@@ -49,16 +49,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1280
-
-$(call inherit-product, frameworks/native/build/phone-hdpi-2048-dalvik-heap.mk)
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
+$(call inherit-product, vendor/omni/config/phone-hdpi-dalvik-heap.mk)
+$(call inherit-product, vendor/omni/config/phone-xxhdpi-2048-hwui-memory.mk)
 
 # Audio
 PRODUCT_PACKAGES += \
-    audiod \
     audio.a2dp.default \
     audio.primary.msm8916 \
     audio.r_submix.default \
@@ -113,10 +108,6 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     memtrack.msm8916
 
-# Doze
-PRODUCT_PACKAGES += \
-   KiwiDoze
-
 # Filesystem
 PRODUCT_PACKAGES += \
     e2fsck \
@@ -126,10 +117,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fingerprint.msm8916 \
     fingerprintd
-
-# FlipFlap
-PRODUCT_PACKAGES += \
-    FlipFlap
 
 # FM
 PRODUCT_PACKAGES += \
